@@ -81,29 +81,33 @@ repeat {
 } while (controle != "1")
 
 func listarProdutos (){
-    print("Listagem completa de produtos:")
-    print("---------------------------------------------------------------")
-    print("|             Nome             |            Preço             |")
-    print("---------------------------------------------------------------")
+    var lid = 0
+    var lnome = 0
+    var lpreco = 0
+    var lcategoria = 0
+    
     for (_, prod) in dict_prod {
-        var nome = (prod[0]).count
-        var lenesquerda = (((31-nome)/2)-2)
-        var lendireita = lenesquerda
-        if (nome % 2 != 0) {lendireita = lendireita - 1}
-        var espacoesquerda = String(repeating: " ", count: lenesquerda)
-        var espacodireita = String(repeating: " ", count: lendireita)
-        
-        var preco = (prod[2]).count
-        var lenesquerda2 = (((30-preco)/2)-2)
-        var lendireita2 = lenesquerda2
-        if (preco % 2 != 0) {lendireita2 = lendireita2 - 1}
-        var espacoesquerda2 = String(repeating: " ", count: lenesquerda2)
-        var espacodireita2 = String(repeating: " ", count: lendireita2)
-        
-        print("|",espacoesquerda, (prod[0]), espacodireita, "|", espacoesquerda2, (prod[2]), espacodireita2, "|")
-        print("---------------------------------------------------------------")
+        if (prod[0]).count > lnome {lnome = (prod[0]).count}
+        if (prod[1]).count > lid {lid = (prod[1]).count}
+        if (prod[2]).count > lpreco {lpreco = (prod[2]).count}
+        if (prod[3]).count > lcategoria {lcategoria = (prod[3]).count}
     }
+    print("Listagem completa de produtos:")
+    var somatotal = (((lid+lnome)+lpreco)+lcategoria)
+    print((String(repeating: "-", count: somatotal+13)))
+    print("| ID \(repete(caractere: " ", Qtd: (lid-2)))| Produto \(repete(caractere: " ", Qtd: (lnome-7)))| Preco \(repete(caractere: " ", Qtd: (lpreco-5)))| Categoria \(repete(caractere: " ", Qtd: (lcategoria-9)))|")
+    print((String(repeating: "-", count: somatotal+13)))
+    
+    for (_, prod) in dict_prod {
+        print(("| \(prod[1]) \(repete(caractere: " ", Qtd: lid-(prod[1]).count))| \(prod[0])\(repete(caractere: " ", Qtd: lnome-(prod[0]).count)) | \(prod[2])\(repete(caractere: " ", Qtd: lpreco-(prod[2]).count)) | \(prod[3])\(repete(caractere: " ", Qtd: lcategoria-(prod[3]).count)) |"))
+    }
+    print((String(repeating: "-", count: somatotal+13)))
+    
 }
+
+    func repete(caractere : String, Qtd : Int) -> String {
+        return String(repeating: caractere, count: Qtd)
+    }
 
 func addcarrinho(){
     print("Adicionar produto ao carrinho")
