@@ -157,13 +157,16 @@ func mostrarcarrinho(){
     } else {
         print("Itens no carrinho:")
         print("---------------------------------------------------------------")
-        print("|             Nome             |            Preço       | Qtd |")
+        print("|             Nome             |            Preço       | Qtd | Valor Total |")
         print("---------------------------------------------------------------")
         for (id, qtd) in carrinho {
             let prod = dict_prod[id]!
             let nome = prod[0]
             let preco = prod[2]
-            print("|", nome.padding(toLength: 28, withPad: " ", startingAt: 0), "|", preco.padding(toLength: 22, withPad: " ", startingAt: 0), "| \(qtd)   |")
+            var precoint = Float(prod[2]) ?? 0
+            var valor = precoint * Float(qtd)
+            var valorTotal = String(format: "%.2f", valor)
+            print("|", nome.padding(toLength: 28, withPad: " ", startingAt: 0), "|", preco.padding(toLength: 22, withPad: " ", startingAt: 0), "| \(qtd)   |", "| \(valorTotal)  |")
             print("---------------------------------------------------------------")
         }
     }
