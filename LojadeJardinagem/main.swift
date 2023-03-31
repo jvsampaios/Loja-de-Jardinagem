@@ -48,24 +48,7 @@ repeat {
         addcarrinho()
     
     case "4":
-        if carrinho.isEmpty {
-            print("Carrinho vazio.")
-        } else {
-            print("Itens no carrinho:")
-            print("---------------------------------------------------------------")
-            print("|             Nome             |            Preço             | Qtd |")
-            print("---------------------------------------------------------------")
-            for (id, qtd) in carrinho {
-                let prod = dict_prod[id]!
-                let nome = prod[0]
-                let preco = prod[2]
-                print("|", nome.padding(toLength: 31, withPad: " ", startingAt: 0), "|", preco.padding(toLength: 30, withPad: " ", startingAt: 0), "| \(qtd) |")
-                print("---------------------------------------------------------------")
-            }
-        }
-
-        
-
+        mostrarcarrinho()
     case "9":
         controle = "1"
     default:
@@ -76,12 +59,18 @@ repeat {
         print("")
         print("0. Voltar ao menu anterior")
         print("3. Adicionar produtos ao carrinho")
+        print("4. Mostrar carrinho")
         print("9. Encerrar programa")
         
         let input2 = readLine()
         if(input2 == "3") {
            addcarrinho()
         }
+       
+        if(input2 == "4") {
+            mostrarcarrinho()
+        }
+        
         if (input2 == "9") {
             controle = "1"
         }
@@ -141,5 +130,23 @@ func addcarrinho(){
         }
     } else {
         print("ID inválido. Tente novamente.")
+    }
+}
+
+func mostrarcarrinho(){
+    if carrinho.isEmpty {
+        print("Carrinho vazio.")
+    } else {
+        print("Itens no carrinho:")
+        print("---------------------------------------------------------------")
+        print("|             Nome             |            Preço             | Qtd |")
+        print("---------------------------------------------------------------")
+        for (id, qtd) in carrinho {
+            let prod = dict_prod[id]!
+            let nome = prod[0]
+            let preco = prod[2]
+            print("|", nome.padding(toLength: 31, withPad: " ", startingAt: 0), "|", preco.padding(toLength: 30, withPad: " ", startingAt: 0), "| \(qtd) |")
+            print("---------------------------------------------------------------")
+        }
     }
 }
