@@ -9,12 +9,12 @@ import Foundation
 
 // iniciar loja
 var dict_prod = [Int: Array<String>]()
-dict_prod[1] = ["Semente de girassol", "120", "0.50", "semente"]
-dict_prod[2] = ["Palmeira", "149", "125.90", "planta"]
-dict_prod[3] = ["To legal", "198", "2.50", "adubo"]
-dict_prod[4] = ["Cresce rápido", "342", "4.80", "fertilizante"]
-dict_prod[5] = ["Vai", "342", "4.80", "fertilizante"]
-dict_prod[6] = ["Cresce muito muito rápido", "342", "4.80", "fertilizante"]
+dict_prod[1] = ["Semente de girassol", "123", "0.50", "semente"]
+dict_prod[2] = ["Palmeira", "345", "125.90", "planta"]
+dict_prod[3] = ["To legal", "678", "2.50", "adubo"]
+dict_prod[4] = ["Cresce rápido", "654", "4.80", "fertilizante"]
+dict_prod[5] = ["Vai", "876", "4.80", "fertilizante"]
+dict_prod[6] = ["Cresce muito muito rápido", "358", "4.80", "fertilizante"]
 
 var carrinho = [Int: Int]()
 var controle = "2"
@@ -127,6 +127,7 @@ func addcarrinho(){
             }
         }
         
+
         
         
         
@@ -134,16 +135,16 @@ func addcarrinho(){
         
         
         
-        if dict_prod[id] != nil {
+        if dict_prod[produtoencontrado] != nil {
             print("Digite a quantidade:")
             if let qtd = Int(readLine() ?? "") {
                 if qtd > 0 {
-                    if carrinho[id] != nil {
-                        carrinho[id]! += qtd
+                    if carrinho[produtoencontrado] != nil {
+                        carrinho[produtoencontrado]! += qtd
                     } else {
-                        carrinho[id] = qtd
+                        carrinho[produtoencontrado] = qtd
                     }
-                    print("\(qtd) unidades do produto \(dict_prod[id]![0]) adicionadas ao carrinho.")
+                    print("\(qtd) unidades do produto \(dict_prod[produtoencontrado]![0]) adicionadas ao carrinho.")
                 } else {
                     print("Quantidade inválida. Tente novamente.")
                 }
