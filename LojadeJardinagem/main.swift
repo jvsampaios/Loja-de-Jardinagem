@@ -58,18 +58,18 @@ repeat {
     if controle != "1" {                            //nao esta funcionando. o loop reinicia independente do numero escolhido, 9 encerra.
         print("")
         print("0. Voltar ao menu anterior")
-        print("3. Adicionar produtos ao carrinho")
-        print("4. Mostrar carrinho")
+        // print("3. Adicionar produtos ao carrinho")
+        // print("4. Mostrar carrinho")
         print("9. Encerrar programa")
         
         let input2 = readLine()
-        if(input2 == "3") {
+        /*if(input2 == "3") {
            addcarrinho()
         }
        
         if(input2 == "4") {
             mostrarcarrinho()
-        }
+        }*/
         
         if (input2 == "9") {
             controle = "1"
@@ -92,9 +92,11 @@ func listarProdutos (){
         if (prod[2]).count > lpreco {lpreco = (prod[2]).count}
         if (prod[3]).count > lcategoria {lcategoria = (prod[3]).count}
     }
-    print("Listagem completa de produtos:")
+    
     var somatotal = (((lid+lnome)+lpreco)+lcategoria)
+    print("Listagem completa de produtos:")
     print((String(repeating: "-", count: somatotal+13)))
+    
     print("| ID \(repete(caractere: " ", Qtd: (lid-2)))| Produto \(repete(caractere: " ", Qtd: (lnome-7)))| Preco \(repete(caractere: " ", Qtd: (lpreco-5)))| Categoria \(repete(caractere: " ", Qtd: (lcategoria-9)))|")
     print((String(repeating: "-", count: somatotal+13)))
     
@@ -102,7 +104,6 @@ func listarProdutos (){
         print(("| \(prod[1]) \(repete(caractere: " ", Qtd: lid-(prod[1]).count))| \(prod[0])\(repete(caractere: " ", Qtd: lnome-(prod[0]).count)) | \(prod[2])\(repete(caractere: " ", Qtd: lpreco-(prod[2]).count)) | \(prod[3])\(repete(caractere: " ", Qtd: lcategoria-(prod[3]).count)) |"))
     }
     print((String(repeating: "-", count: somatotal+13)))
-    
 }
 
     func repete(caractere : String, Qtd : Int) -> String {
@@ -110,9 +111,29 @@ func listarProdutos (){
     }
 
 func addcarrinho(){
+    
+    listarProdutos()
+    
+    print("")
     print("Adicionar produto ao carrinho")
     print("Digite o ID do produto:")
     if let id = Int(readLine() ?? "") {
+        
+        var produtoencontrado = 0
+        
+        for (i, prod) in dict_prod {
+            if prod[1] == String(id) {
+                var produtoencontrado = i
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
         if dict_prod[id] != nil {
             print("Digite a quantidade:")
             if let qtd = Int(readLine() ?? "") {
