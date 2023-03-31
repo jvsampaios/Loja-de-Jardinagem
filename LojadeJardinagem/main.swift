@@ -177,9 +177,6 @@ func mostrarCategoria(){
 }
 
 func mostrarProdCateg(categoria: String){
-    for (_,prod) in dict_prod {
-        
-        
         var lid = 0
         var lnome = 0
         var lpreco = 0
@@ -206,5 +203,5 @@ func mostrarProdCateg(categoria: String){
             
         }
     
-}
+
 
