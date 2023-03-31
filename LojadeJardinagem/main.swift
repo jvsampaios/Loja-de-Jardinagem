@@ -9,12 +9,12 @@ import Foundation
 
 // iniciar loja
 var dict_prod = [Int: Array<String>]()
-dict_prod[1] = ["Semente de girassol", "123", "0.50", "semente"]
-dict_prod[2] = ["Palmeira", "345", "125.90", "planta"]
-dict_prod[3] = ["To legal", "678", "2.50", "adubo"]
-dict_prod[4] = ["Cresce rápido", "654", "4.80", "fertilizante"]
-dict_prod[5] = ["Vai", "876", "4.80", "fertilizante"]
-dict_prod[6] = ["Cresce muito muito rápido", "358", "4.80", "fertilizante"]
+dict_prod[0] = ["Semente de girassol", "123", "0.50", "semente"]
+dict_prod[1] = ["Palmeira", "345", "125.90", "planta"]
+dict_prod[2] = ["To legal", "678", "2.50", "adubo"]
+dict_prod[3] = ["Cresce rápido", "654", "4.80", "fertilizante"]
+dict_prod[4] = ["Vai", "876", "4.80", "fertilizante"]
+dict_prod[5] = ["Cresce muito muito rápido", "358", "4.80", "fertilizante"]
 
 var carrinho = [Int: Int]()
 var controle = "2"
@@ -120,18 +120,13 @@ func addcarrinho(){
         var produtoencontrado = 0
         
         for (i, prod) in dict_prod {
+            
+            // print(prod[0])
+            
             if prod[1] == String(id) {
-                var produtoencontrado = i
+                produtoencontrado = i
             }
         }
-        
-
-        
-        
-        
-        
-        
-        
         
         if dict_prod[produtoencontrado] != nil {
             print("Digite a quantidade:")
