@@ -19,21 +19,74 @@ dict_prod[5] = ["Cresce muito muito rápido", "358", "4.80", "fertilizante"]
 var carrinho = [Int: Int]()
 var controle = "2"
 
-repeat {
+print("""
+                    H   H   H           H
+                   H   H       H   H   H   H       H   H
+                     H   H       H   H   H       H   H
+           H       H   H       H   H   H   H       H   H       H
+         H   H       H   H       H   H   H       H   H       H   H
+           H   H   H   H   H       H   H       H   H   H   H   H
+         H   H       H   H   H       H       H   H   H       H   H
+           H   H       H   H   H           H   H   H   H   H   H
+         H   H   H       H   H   H       H   H   H   H       H   H
+@               H   H   H       H   H   H   H   H   H   H       H   H
+@ @          H   H   H   H       H   H   H   H   H   H       H   H   H
+@ @         H   H   H   H   H   H   H   H   H   H   H       H   H
+@ @ @        H   H   H       H   H   H   H   H   H       H   H   H
+   @ @     H   H   H   H       H   H   H   H   H       H   H   H
+    @ @ @    H   H   H           H   H   H   H       H   H   H    @ @
+     @ @   H   H   H   H   @   H   H   H           H   H   H   @ @ @ @ @
+    @ @      H   H   H    @ @    H   H           H   H   H    @ @ @   @ @
+   @ @ @   H   H   H   H   @ @     H       H   H   H   H     @ @ @
+    @ @  H   H   H   H      @ @          H   H   H   H   H    @ @ @
+     @     H   H   H   H   @ @ @   H   H   H   H   H   H     @ @ @
+         H   H   H   H      @ @      H   H   H   H   H   H    @ @
+           H   H   H   H     @ @       H   H   H   H   H     @ @ @
+@ @ @        H   H   H   H    @ @    H   H   H   H   H   H    @ @
+@ @ @ @ @ @       H   H   H     @ @ @     H   H   H   H   H     @ @ @
+@ @     @ @ @        H   H   H    @ @ @      H   H   H   H      @ @ @
+@       @ @ @ @   H   H   H   H   @ @ @   H   H   H   H   H   @ @ @
+        @ @ @    H   H   H    @ @ @ @    H   H   H   H    @ @ @ @
+         @ @ @     H   H   H   @ @ @   H   H   H   H     @ @ @
+            @ @ @    H   H    @ @ @ @    H   H   H      @ @
+               @ @     H   H   @ @ @ @     H   H       @ @ @
+                @ @ @    H    @ @ @ @ @  H          @ @ @
+                 @ @ @       @ @ @ @ @ @   @ @ @ @ @ @ @
+                  @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+                     @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+                        @ @ @ @ @ @ @ @ @ @
+                             @ @ @ @ @ @
+                              @ @ @ @ @
+                                 @ @ @
+        @ @ @                   @ @ @
+         @ @ @ @ @ @             @ @ @
+          @ @ @ @ @ @ @         @ @ @
+           @ @ @ @ @ @ @       @ @ @
+            @ @ @ @ @ @ @     @ @ @   @ @ @ @ @
+               @ @ @ @ @   @ @ @ @ @ @ @ @ @ @ @ @ @
+                    @ @   @ @ @     @ @ @ @ @ @ @ @ @
+                       @ @ @ @       @ @ @ @ @ @ @ @ @
+                    @ @ @ @             @ @ @ @ @
+                 @ @ @ @
+              @ @ @ @
+\n
+""")
 
+repeat {
+    
     print("Bem-vindo a loja Adube-se. Aqui temos produtos para todos os tipos de plantas.")
     print("1. Listar todos os produtos")
     print("2. Buscar produto por categoria")
     print("3. Adicionar produto ao carrinho")
     print("4. Ver carrinho")
     print("9. Encerrar")
-
+    
     print("")
     print("O que voce deseja fazer? Digite o numero correspondente")
-
+    
     let input = readLine() ?? ""
     
-
+    
     print("")
     
     // Encerrar sistema
@@ -44,7 +97,7 @@ repeat {
         mostrarCategoria()
     case "3":
         addcarrinho()
-    
+        
     case "4":
         mostrarcarrinho()
     case "9":
@@ -52,31 +105,31 @@ repeat {
     default:
         print("Opcao invalida")
     }
-
+    
     if controle != "1" {                            //nao esta funcionando. o loop reinicia independente do numero escolhido, 9 encerra.
         print("")
         print("0. Voltar ao menu anterior")
         // print("3. Adicionar produtos ao carrinho")
         // print("4. Mostrar carrinho")
         print("9. Encerrar programa")
-    
+        
         
         let input2 = readLine()
         /*if(input2 == "3") {
-           addcarrinho()
-        }
-       
-        if(input2 == "4") {
-            mostrarcarrinho()
-        }*/
+         addcarrinho()
+         }
+         
+         if(input2 == "4") {
+         mostrarcarrinho()
+         }*/
         
         if (input2 == "9") {
             controle = "1"
         }
-
-
+        
+        
     }
-
+    
 } while (controle != "1")
 
 func listarProdutos (){
@@ -105,9 +158,9 @@ func listarProdutos (){
     print((String(repeating: "-", count: somatotal+13)))
 }
 
-    func repete(caractere : String, Qtd : Int) -> String {
-        return String(repeating: caractere, count: Qtd)
-    }
+func repete(caractere : String, Qtd : Int) -> String {
+    return String(repeating: caractere, count: Qtd)
+}
 
 func addcarrinho(){
     
@@ -192,7 +245,7 @@ func mostrarCategoria(){
         print("Categoria invalida. Tente novamente.")
         
     }
-
+    
 }
 
 func mostrarProdCateg(categoria: String){
@@ -223,6 +276,6 @@ func mostrarProdCateg(categoria: String){
     
 }
 
-    
+
 
 
