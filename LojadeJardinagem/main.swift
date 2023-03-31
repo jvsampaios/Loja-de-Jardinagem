@@ -59,6 +59,7 @@ repeat {
         // print("3. Adicionar produtos ao carrinho")
         // print("4. Mostrar carrinho")
         print("9. Encerrar programa")
+    
         
         let input2 = readLine()
         /*if(input2 == "3") {
@@ -121,8 +122,6 @@ func addcarrinho(){
         
         for (i, prod) in dict_prod {
             
-            // print(prod[0])
-            
             if prod[1] == String(id) {
                 produtoencontrado = i
             }
@@ -158,13 +157,13 @@ func mostrarcarrinho(){
     } else {
         print("Itens no carrinho:")
         print("---------------------------------------------------------------")
-        print("|             Nome             |            Preço             | Qtd |")
+        print("|             Nome             |            Preço       | Qtd |")
         print("---------------------------------------------------------------")
         for (id, qtd) in carrinho {
             let prod = dict_prod[id]!
             let nome = prod[0]
             let preco = prod[2]
-            print("|", nome.padding(toLength: 31, withPad: " ", startingAt: 0), "|", preco.padding(toLength: 30, withPad: " ", startingAt: 0), "| \(qtd) |")
+            print("|", nome.padding(toLength: 28, withPad: " ", startingAt: 0), "|", preco.padding(toLength: 22, withPad: " ", startingAt: 0), "| \(qtd)   |")
             print("---------------------------------------------------------------")
         }
     }
@@ -194,31 +193,33 @@ func mostrarCategoria(){
 }
 
 func mostrarProdCateg(categoria: String){
-        var lid = 0
-        var lnome = 0
-        var lpreco = 0
-        var lcategoria = 0
-        
-        for (_, prod) in dict_prod {
-            if (prod[0]).count > lnome {lnome = (prod[0]).count}
-            if (prod[1]).count > lid {lid = (prod[1]).count}
-            if (prod[2]).count > lpreco {lpreco = (prod[2]).count}
-            if (prod[3]).count > lcategoria {lcategoria = (prod[3]).count}
-        }
-        print("Listagem completa de produtos da categoria \(categoria):")
-        var somatotal = (((lid+lnome)+lpreco)+lcategoria)
-        print((String(repeating: "-", count: somatotal+13)))
-        print("| ID \(repete(caractere: " ", Qtd: (lid-2)))| Produto \(repete(caractere: " ", Qtd: (lnome-7)))| Preco \(repete(caractere: " ", Qtd: (lpreco-5)))| Categoria \(repete(caractere: " ", Qtd: (lcategoria-9)))|")
-        print((String(repeating: "-", count: somatotal+13)))
-        
-        
-        for (_, prod) in dict_prod {
-            if(prod[3]==categoria){
-                print(("| \(prod[1]) \(repete(caractere: " ", Qtd: lid-(prod[1]).count))| \(prod[0])\(repete(caractere: " ", Qtd: lnome-(prod[0]).count)) | \(prod[2])\(repete(caractere: " ", Qtd: lpreco-(prod[2]).count)) | \(prod[3])\(repete(caractere: " ", Qtd: lcategoria-(prod[3]).count)) |"))
-            }}
-            print((String(repeating: "-", count: somatotal+13)))
-            
-        }
+    var lid = 0
+    var lnome = 0
+    var lpreco = 0
+    var lcategoria = 0
+    
+    for (_, prod) in dict_prod {
+        if (prod[0]).count > lnome {lnome = (prod[0]).count}
+        if (prod[1]).count > lid {lid = (prod[1]).count}
+        if (prod[2]).count > lpreco {lpreco = (prod[2]).count}
+        if (prod[3]).count > lcategoria {lcategoria = (prod[3]).count}
+    }
+    print("Listagem completa de produtos da categoria \(categoria):")
+    var somatotal = (((lid+lnome)+lpreco)+lcategoria)
+    print((String(repeating: "-", count: somatotal+13)))
+    print("| ID \(repete(caractere: " ", Qtd: (lid-2)))| Produto \(repete(caractere: " ", Qtd: (lnome-7)))| Preco \(repete(caractere: " ", Qtd: (lpreco-5)))| Categoria \(repete(caractere: " ", Qtd: (lcategoria-9)))|")
+    print((String(repeating: "-", count: somatotal+13)))
+    
+    
+    for (_, prod) in dict_prod {
+        if(prod[3]==categoria){
+            print(("| \(prod[1]) \(repete(caractere: " ", Qtd: lid-(prod[1]).count))| \(prod[0])\(repete(caractere: " ", Qtd: lnome-(prod[0]).count)) | \(prod[2])\(repete(caractere: " ", Qtd: lpreco-(prod[2]).count)) | \(prod[3])\(repete(caractere: " ", Qtd: lcategoria-(prod[3]).count)) |"))
+        }}
+    print((String(repeating: "-", count: somatotal+13)))
+    
+    
+}
+
     
 
 
