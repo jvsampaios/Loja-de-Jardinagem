@@ -1,7 +1,7 @@
 # Loja-de-Jardinagem
-Projeto para aplicar conceitos de Programacao Orientada a Objetos em Swift
+Projeto para aplicar conceitos de Estrutura de Dados em Swift
 
-Projeto do iOS Foundation(Apple Developer Academy) - IFCE
+Projeto do iOS Foundation (Apple Developer Academy) - IFCE
 
 - Sistema que gerencia a compra de produtos numa loja de jardinagem.
 - Um produto de jardinagem possui um id, nome, categoria (fertilizante, adubo,
