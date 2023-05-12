@@ -19,59 +19,6 @@ dict_prod[5] = ["Cresce muito muito rápido", "358", "4.80", "fertilizante"]
 var carrinho = [Int: Int]()
 var controle = "2"
 
-print("""
-                    H   H   H           H
-                   H   H       H   H   H   H       H   H
-                     H   H       H   H   H       H   H
-           H       H   H       H   H   H   H       H   H       H
-         H   H       H   H       H   H   H       H   H       H   H
-           H   H   H   H   H       H   H       H   H   H   H   H
-         H   H       H   H   H       H       H   H   H       H   H
-           H   H       H   H   H           H   H   H   H   H   H
-         H   H   H       H   H   H       H   H   H   H       H   H
-@               H   H   H       H   H   H   H   H   H   H       H   H
-@ @          H   H   H   H       H   H   H   H   H   H       H   H   H
-@ @         H   H   H   H   H   H   H   H   H   H   H       H   H
-@ @ @        H   H   H       H   H   H   H   H   H       H   H   H
-   @ @     H   H   H   H       H   H   H   H   H       H   H   H
-    @ @ @    H   H   H           H   H   H   H       H   H   H    @ @
-     @ @   H   H   H   H   @   H   H   H           H   H   H   @ @ @ @ @
-    @ @      H   H   H    @ @    H   H           H   H   H    @ @ @   @ @
-   @ @ @   H   H   H   H   @ @     H       H   H   H   H     @ @ @
-    @ @  H   H   H   H      @ @          H   H   H   H   H    @ @ @
-     @     H   H   H   H   @ @ @   H   H   H   H   H   H     @ @ @
-         H   H   H   H      @ @      H   H   H   H   H   H    @ @
-           H   H   H   H     @ @       H   H   H   H   H     @ @ @
-@ @ @        H   H   H   H    @ @    H   H   H   H   H   H    @ @
-@ @ @ @ @ @       H   H   H     @ @ @     H   H   H   H   H     @ @ @
-@ @     @ @ @        H   H   H    @ @ @      H   H   H   H      @ @ @
-@       @ @ @ @   H   H   H   H   @ @ @   H   H   H   H   H   @ @ @
-        @ @ @    H   H   H    @ @ @ @    H   H   H   H    @ @ @ @
-         @ @ @     H   H   H   @ @ @   H   H   H   H     @ @ @
-            @ @ @    H   H    @ @ @ @    H   H   H      @ @
-               @ @     H   H   @ @ @ @     H   H       @ @ @
-                @ @ @    H    @ @ @ @ @  H          @ @ @
-                 @ @ @       @ @ @ @ @ @   @ @ @ @ @ @ @
-                  @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
-                     @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
-                        @ @ @ @ @ @ @ @ @ @
-                             @ @ @ @ @ @
-                              @ @ @ @ @
-                                 @ @ @
-        @ @ @                   @ @ @
-         @ @ @ @ @ @             @ @ @
-          @ @ @ @ @ @ @         @ @ @
-           @ @ @ @ @ @ @       @ @ @
-            @ @ @ @ @ @ @     @ @ @   @ @ @ @ @
-               @ @ @ @ @   @ @ @ @ @ @ @ @ @ @ @ @ @
-                    @ @   @ @ @     @ @ @ @ @ @ @ @ @
-                       @ @ @ @       @ @ @ @ @ @ @ @ @
-                    @ @ @ @             @ @ @ @ @
-                 @ @ @ @
-              @ @ @ @
-\n
-""")
-
 repeat {
     
     print("Bem-vindo a loja Adube-se. Aqui temos produtos para todos os tipos de plantas.")
